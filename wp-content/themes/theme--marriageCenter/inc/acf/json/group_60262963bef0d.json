@@ -1,0 +1,54 @@
+{
+    "key": "group_60262963bef0d",
+    "title": "Evaluation Domain Topic",
+    "fields": [
+        {
+            "key": "field_60262998788a7",
+            "label": "Evaluation Domain",
+            "name": "evaluation_domain",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "evaluation": "Evaluation Participant Characteristics",
+                "program": "Program Participation"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "measure-topic"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+<<<<<<< HEAD
+    "active": true,
+    "description": "",
+    "modified": 1630341202
+=======
+    "active": 1,
+    "description": "",
+    "modified": 1613123204
+>>>>>>> 9c463c4888eb7f75f9ff8c1dca0a9ebafaa445cf
+}

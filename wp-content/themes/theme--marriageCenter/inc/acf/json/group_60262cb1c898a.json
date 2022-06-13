@@ -1,0 +1,214 @@
+{
+    "key": "group_60262cb1c898a",
+    "title": "Measures",
+    "fields": [
+        {
+            "key": "field_6041c46bb93ac",
+            "label": "Measure Name",
+            "name": "measure_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602632f640853",
+            "label": "Evaluation Domain",
+            "name": "measure_domain",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "evaluation": "Evaluation Participant Characteristics",
+                "program": "Program Participation"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60262d7a37a9e",
+            "label": "BSF",
+            "name": "measure_evaluation_bsf",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602632f640853",
+                        "operator": "==",
+                        "value": "evaluation"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "baseline": "Baseline",
+                "fifteen-month": "15-Month Follow-Up",
+                "thirty-six-month": "36-Month Follow-Up"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_60262e976b293",
+            "label": "SHM",
+            "name": "measure_evaluation_shm",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602632f640853",
+                        "operator": "==",
+                        "value": "evaluation"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "baseline": "Baseline",
+                "child-baseline": "Child Longitudinal Data (Baseline)",
+                "twelve-month": "12-Month Follow-Up",
+                "child-twelve-month": "Child Longitudinal Data (12-Month)",
+                "thirty-month": "30-Month Follow-Up",
+                "child-thirty-month": "Child Longitudinal Data (30-Month)",
+                "youth-survey": "30-M Youth Survey"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_602633e1ea6ef",
+            "label": "BSF",
+            "name": "measure_program_bsf",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602632f640853",
+                        "operator": "==",
+                        "value": "program"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "management": "Management Information System (MIS)"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        },
+        {
+            "key": "field_602633dfea6ee",
+            "label": "SHM",
+            "name": "measure_program_shm",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_602632f640853",
+                        "operator": "==",
+                        "value": "program"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "baseline": "Baseline",
+                "twelve-month": "12-Month Follow-Up",
+                "activities": "MIS Extended Activities",
+                "support": "MIS Family Support",
+                "education": "MIS Marriage Education",
+                "payments": "MIS Payments",
+                "referrals": "MIS Referrals"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "measure"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+<<<<<<< HEAD
+    "active": true,
+    "description": "",
+    "modified": 1630341202
+=======
+    "active": 1,
+    "description": "",
+    "modified": 1614922891
+>>>>>>> 9c463c4888eb7f75f9ff8c1dca0a9ebafaa445cf
+}

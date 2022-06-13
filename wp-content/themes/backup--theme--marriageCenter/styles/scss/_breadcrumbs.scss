@@ -1,0 +1,68 @@
+.breadcrumbs,
+.bbp-breadcrumb {
+    margin-bottom: .5rem;
+    
+    .fbc-items,
+    p {
+        background: none !important;
+        padding: 0;
+        font-size: 16px;
+
+        > span {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        li,
+        a {
+            @include fs;
+            margin: 0;
+            display: inline-block;
+
+            a {
+                color: $color2;
+            }
+        }
+
+        li {
+             @media screen and ( max-width: 768px ) {
+                padding-right: 5px !important;
+            }
+        }
+
+        a {
+            @media screen and ( max-width: 768px ) {
+                margin-right: 5px !important;
+            }
+        }
+    }
+
+    .fbc-page .fbc-wrap .fbc-items li:first-child {
+        padding-left: 0;
+    }
+}
+
+.bbp-breadcrumb {
+    .bbp-breadcrumb-sep {
+        color: white;
+        margin-right: 0;
+
+        &:before {
+            content: "▶";
+            color: $grey;
+            display: inline-block;
+            font-size: 14px;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+
+    .bbp-breadcrumb-current {
+        @include fs;
+        font-size: 14px;
+        margin: 0;
+        color: black;
+
+    }
+}

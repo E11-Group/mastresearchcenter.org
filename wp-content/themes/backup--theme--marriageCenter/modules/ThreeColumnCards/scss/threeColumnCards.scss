@@ -1,0 +1,61 @@
+.threeColumnCards {
+    background: $color1--light;
+    padding: 4rem 0 0;
+    
+    .cards {
+        background: none;
+        padding: 0;
+    }
+
+    .card__image {
+        max-width: 160px;
+        background-size: 100%;
+        background-position: center;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+
+        @media screen and ( max-width: 980px ) {
+            max-width: 100px;
+        }
+
+        @media screen and ( max-width: 850px ) {
+            max-width: 230px;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            max-width: 160px;
+        }
+    }
+
+    .card {
+
+        @media screen and ( max-width: 850px ) {
+            flex-basis: 100%;
+            padding: 0 8rem;
+        }
+
+        @media screen and ( max-width: 700px ) {
+            padding: 0;
+        }
+    }
+}
+
+.threeColumnCards__header {
+    @include flexRow();
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @media screen and ( max-width: 768px ) {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+.threeColumnCards__title {
+    font-size: trem(36px)
+}
+
+.threeColumnCards__cta {
+    @include button;
+}

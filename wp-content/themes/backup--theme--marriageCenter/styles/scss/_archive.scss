@@ -1,0 +1,211 @@
+.archiveSection {
+    padding: 4rem 0;
+
+    > .l-container {
+        max-width: 1500px;
+    }
+}
+
+.archive__row {
+    justify-content: space-between;
+    align-items: stretch;
+
+    @media screen and ( max-width: 890px ) {
+        flex-direction: column-reverse;
+    }
+}
+
+// Sidebar
+.archive__sidebar {
+    flex-basis: 24%;
+    background: #fafafa;
+
+    @media screen and ( max-width: 1050px ) {
+        flex-basis: 26%;
+    }
+
+    @media screen and ( max-width: 890px ) {
+        flex-basis: 100%;
+        margin-top: 1rem;
+    }
+}
+
+.archive__filters {
+    padding: 1rem;
+}
+
+.archive__filter__title {
+    @include fp;
+    font-weight: normal;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    cursor: pointer;
+    position: relative;
+
+    span {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $color2;
+        border-radius: 100%;
+        color: white;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        display: block;
+        line-height: 1.1;
+        text-align: center;
+    }
+}
+
+.archive__filter {
+    margin-bottom: .2rem;
+}
+
+.archive__filter__itemGroupWrap {
+    display: none;
+}
+
+.archive__filter__itemGroup {
+    @include flexRow;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    padding: .2rem .2rem 0;
+
+    &:last-child {
+        margin-bottom: 1rem;
+    }
+
+    select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.archive__filter__label {
+    flex-basis: 100%;
+    @include checkboxLabel();
+
+    &:not(.archive__filter__label--child) {
+        font-weight: bold;
+    }
+}
+
+.archive__filter__label--child {
+    padding-left: 1rem;
+    font-size: trem(13px);
+
+    &:after {
+        width: 18px;
+        height: 18px;
+        background-size: 10px 24px;
+    }
+}
+
+
+
+.archive__filter__checkbox:checked + label {
+    &:after {
+        background-color: $color2;
+        background-image: url(../../images/icon__checkmark--white.svg);
+    }
+}
+
+.archive__filter__checkbox {
+    flex-basis: 2%;
+    text-align: right;
+    display: none;
+}
+
+.archive__filter__itemGroup:nth-child(even) {
+    // background: #efefef;
+}
+
+.archive__filter__buttonWrap {
+    @include flexRow;
+    opacity: 0;
+    transition: opacity .25s $cb--ease;
+    margin-top: 1rem;
+
+    &.shown {
+        opacity: 1;
+    }
+
+    button,
+    .button {
+        margin-bottom: .5rem;
+        width: 100%;
+    }
+}
+
+// Content
+.archive__content {
+    flex-basis: 72%;
+
+    @media screen and ( max-width: 890px ) {
+        flex-basis: 100%;
+    }
+}
+
+.archive__list__results {
+    @include flexRow;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 1rem;
+}
+
+.archive__list__results__countWrap {
+    flex-basis: 50%;
+    font-style: italic;
+    font-size: trem(16px);
+}
+
+.archive__list__results__sort {
+    flex-basis: 50%;
+    text-align: right;
+    padding-bottom: 1rem;
+
+    > span {
+        @include fs;
+        font-size: trem(14px);
+        text-transform: uppercase;
+        margin-right: .5rem;
+    }
+}
+
+.archive__list {
+    flex-flow: row wrap;
+    align-items: stretch;
+
+    &:after {
+        content: "";
+    }
+
+    .card,
+    &:after {
+        flex-basis: 32%;
+        margin-bottom: 1rem;
+
+        @media screen and ( max-width: 980px ) {
+            flex-basis: 49%;
+            margin-bottom: 1rem;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            flex-basis: 100%;
+        }
+    }
+
+    .card__inner {
+        height: 100%;
+    }
+}
+
+.archive__list {
+    justify-content: space-between;
+    flex-flow: auto flow;
+}

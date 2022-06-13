@@ -1,0 +1,39 @@
+{% block threeColumnCards %}
+<section class="{{classes}}">
+    <div class="l-container">
+        
+        {% if section_title %}
+        <header class="threeColumnCards__header">
+            <h2 class="threeColumnCards__title">{{ section_title }}</h2>
+           
+            {% if section_cta_link and section_cta_text %}
+            <a href="{{ section_cta_link }}" class="threeColumnCards__cta">{{ section_cta_text }}</a>
+            {% endif %}
+        </header>
+        {% endif %}
+
+        <div class="cards">
+            <div class="cards__row">
+                {% for card in cards %}
+                    <div class="card">
+                        <div class="card__inner">
+                            <div class="card__imageWrap">
+                                <div class="card__image" style="background-image: url({{ card.image_url }})"></div>
+                            </div>
+                            <div class="card__contentWrap">
+                                {% if card.link %}
+                                    <h2 class="card__title"><a href="{{ card.link }}">{{ card.title }}</a></h2>
+                                {% else %}
+                                    <h2 class="card__title">{{ card.title }}</h2>
+                                {% endif %}
+                                <div class="card__content">{{ card.content }}</div>                               
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

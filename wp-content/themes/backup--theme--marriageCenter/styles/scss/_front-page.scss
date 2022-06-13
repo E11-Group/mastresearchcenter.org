@@ -1,0 +1,248 @@
+.home .main {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    margin-top: -492px;
+    padding-top: calc(492px + 4rem);
+
+    @media screen and ( max-width: 1410px ) {
+        margin-top: -590px;
+    }
+
+    @media screen and ( max-width: 800px ) {
+        padding-top: calc(492px + 0rem);
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        border-radius: 100%;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        background: $color1;
+        opacity: .56;
+        
+    }
+
+    &:before {
+        width: 40vw;
+        height: 40vw;
+        top: 0;
+        right: 0;
+        transform: translate(50%,-50%);
+
+        @media screen and ( max-width: 1600px ) {
+            width: 20vw;
+            height: 20vw;
+        }
+
+        @media screen and ( max-width: 1295px ) {
+            display: none;
+        }
+    }
+
+    &:after {
+        width: 2180px;
+        height: 2180px;
+        top: 100%;
+        left: 0;
+        transform: translate(-50%,-50%);
+    }
+
+    .l-container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+// Featured cards
+.featuredCards__row {
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 90%;
+    margin: 0 auto;
+    color: black;
+    
+    @media screen and ( max-width: 980px ) {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    > * {
+        flex-basis: 48%;
+
+        @media screen and ( max-width: 980px ) {
+            flex-basis: 75%;
+        }
+
+        @media screen and ( max-width: 768px ) {
+            flex-basis: 100%;
+        }
+    }
+}
+
+.featuredCard {
+    margin-bottom: 4rem;
+    border-radius: $borderRadius;
+    background: #e5ffff;
+    background: -moz-linear-gradient(top,  #e5ffff 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top,  #e5ffff 0%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #e5ffff 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ffff', endColorstr='#ffffff',GradientType=0 );
+}
+
+.featuredCard__inner {
+    padding: 2.5rem 2.5rem 4rem;
+    position: relative;
+    height: 100%;
+}
+
+.featuredCard__header {
+    @include flexRow;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featuredCard__header__label,
+.featuredCard__header__date {
+    @include fs;
+}
+
+.featuredCard__header__label {
+    color: black;
+    font-size: trem(28px);
+}
+
+.featuredCard__header__date {
+    font-size: trem(18px);
+    color: $grey;
+}
+
+.featuredCard__image {
+    padding-top: 500px;
+    background-size: cover;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    margin: 2rem 0;
+    transform: translateX(2.5rem);
+
+    @media screen and ( max-width: 1500px ) {
+        padding-top: 300px;
+        border-top-left-radius: 300px;
+        border-bottom-left-radius: 300px;
+    }
+}
+
+.featuredCard__title {
+    font-size: trem(36px);
+
+    a {
+        color: $color2;
+        text-decoration: underline;
+    }
+}
+
+.featuredCard__tags {
+    @include tags;
+}
+
+.featuredCard__cta {
+    @include button;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: none;
+}
+
+
+// News
+.homeSection--cards {
+    // background: url(../../images/bg__section--news.jpg);
+    background-size: cover;
+    background-position: top center;
+    background: #193E72;
+    padding: 4rem 0;
+
+    .cards__title {
+        color: white;
+        font-size: trem(36px);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .cards__row {
+        flex-flow: row wrap;
+    }
+    
+    .cards__row:after {
+        content: "";
+    }
+
+    .card,
+    .cards__row:after {
+        flex-basis: 24%;
+
+        @media screen and ( max-width: 980px ) {
+            flex-basis: 49%;
+            margin-bottom: 1rem;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            flex-basis: 100%;
+        }
+    }
+}
+
+
+// Partners
+.partners {
+    padding: 4rem 0;
+    background: white;
+}
+
+.partners__container {
+    max-width: 1170px;
+    padding: 0 1rem;
+    clear: both;
+}
+
+.partners__title {
+    font-size: trem(36px);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.partners__row {
+    justify-content: center;
+    align-items: center;
+}
+
+.partner {
+    flex-basis: 20%;
+    text-align: center;
+
+    @media screen and ( max-width: 768px ) {
+        flex-basis: 49%;
+        margin-bottom: 1rem;
+    }
+}
+
+.partner__logo {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.partner__inner {
+    padding: 0 2rem;
+}

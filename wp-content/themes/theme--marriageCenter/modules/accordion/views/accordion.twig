@@ -1,0 +1,25 @@
+{% block accordion %}
+<div class="{{ classes }}">
+    <div class="l-container--small accordion__inner">
+        {% if sectionTitle %}
+        <h2 class="module__title accordions__title">{{ sectionTitle }}</h2>      
+        {% endif %}  
+        <div class="accordion__items">
+            {% for accordion in accordions %}
+                <div class="accordion__item">
+                    <h3 class="accordion__item__title">{{accordion.title}} <span></span></h3>
+                    <div style="display: none" class="accordion__item__content entryContent">
+                        {{ accordion.content }}
+
+                        {% if accordion.cta_link %}
+                            <div class="accordion__item__ctaWrap">
+                                <a class="cmpnt__btn" target="{{ accordion.cta_link.target }}" href="{{ accordion.cta_link.url }}">{{ accordion.cta_link.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

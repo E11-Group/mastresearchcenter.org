@@ -1,0 +1,323 @@
+// main
+.main.main--bbpress {
+    background: white;
+
+    .l-container {
+        max-width: 1500px;
+        padding-bottom: 4rem;
+    }
+}
+
+// avatars
+#bbp-user-avatar,
+#bbp-user-avatar img,
+.bbp-author-avatar,
+.bbp-author-avatar img {
+    border-radius: 100%;
+}
+
+#bbp-user-avatar {
+    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    margin: 0 auto 1rem;
+}
+
+// header
+.disputo-page-title {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+// Notices
+.bbp-template-notice {
+    border: 3px solid $color2 !important;
+    border-radius: $borderRadius;
+    margin-bottom: 1rem;
+    background-color: $grey--lighter !important;
+    padding: 1rem 1.5rem;
+    padding-left: 4rem;
+    background-position: 1rem center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/icon__notification--warning.svg");
+    
+    &:before {
+        @include fs;
+        content: "Notice";
+    }
+
+    &.error {
+        background-image: url("../../images/icon__notification--error.svg");            
+
+        &:before {
+            @include fs;
+            content: "Error";
+        }
+        
+        li {
+            position: relative;
+            transform: translateX(-6px);
+            
+            &:before {
+                content: "";
+                width: 5px;
+                height: 100%;
+                background: $grey--lighter;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        strong {
+            display: none;
+        }
+    }
+}
+
+// #bbpress-forums > .bbp-template-notice {
+//     background-image: url("../../images/icon__notification--sucess.svg");
+
+//     &:before {
+//         @include fs;
+//         content: "Success";
+//     }
+// }
+
+.bbp-breadcrumb {
+    padding: 0;
+}
+
+// make buttons
+.subscription-toggle {
+    @include button;
+}
+
+.list-group-item {
+    font-size: trem(16px);
+}
+
+.disputo-replies-content-bar-left {
+    font-size: trem(16px);
+}
+
+.disputo-replies-content-bar-right {
+    li {
+        padding: 0;
+        margin-right: .3rem;
+    }
+
+    a {
+        @include fs;
+        padding: .4rem;
+        font-size: trem(14px);
+        display: inline-block;
+
+        &+a {
+            display: none;
+        }
+
+        &:hover {
+            background: $color4;
+            color: $grey--dark;
+        }
+
+        i {
+            font-size: trem(20px);
+        }
+    }
+}
+
+.disputo-replies-content {
+    font-size: trem(18px);
+
+    p {
+        margin-bottom: 1rem;
+    }
+}
+
+#wp-bbp_topic_content-wrap {
+    margin-top: 1rem;
+}
+
+#bbp_stick_topic_select {
+    margin-bottom: 1rem;
+}
+
+
+.bbp-user-blog.list-group-item {
+    display: none !important;
+}
+
+.bbp-password {
+    margin-top: 1rem;
+}
+.bbp-template-notice + .bbp-login-form {
+    display: none;
+}
+
+.bbp-login-form {
+    margin: 4rem auto 4rem;
+    max-width: 600px;
+    
+    label {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+.bbpresFormActions__row {
+    @include flexRow();
+    justify-content: space-between;
+    padding: 2rem 0;
+
+    @media screen and ( max-width: 1250px ) {
+        flex-direction: column-reverse;
+    }
+
+    .bbp-form > div,
+    .ur-field-item {
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .bbp-remember-me {
+        display: none;
+    }
+
+    abbr[title], abbr[data-original-title] {
+        text-decoration: none;
+        color: red;
+        font-size: 14px;
+    }
+
+    > * {
+        flex-basis: 50%;
+
+        @media screen and ( max-width: 1250px ) {
+            flex-basis: 100%;
+            width: 100%;
+        }
+
+        &:first-child {
+            @media screen and ( min-width: 1251px ) {
+                border-right: 2px solid $grey--light;
+            }
+        }
+    }
+
+    select,
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    .bbp-login-form {
+        margin: 0;
+
+        legend {
+            @include fs;
+            font-size: 1.63636rem;
+            color: $grey--dark;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+    }
+}
+
+.user-registration-password-hint {
+    font-style: italic;
+    font-size: 14px;
+    margin-top: .5rem;
+}
+
+.user-registration-message {
+    border: green 2px solid;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    color: green;
+}
+
+.bbpresFormActions__item__inner {
+    padding: 0 3rem;
+
+    @media screen and ( max-width: 860px ) {
+        padding: 0 1rem;
+    }
+}
+
+.bbpresFormActions__register {
+    @media screen and ( max-width: 1250px ) {
+        margin-bottom: 1rem;
+    }
+
+    .bbp-template-notice {
+        display: none;
+    }
+
+    .register > .ur-form-row:first-child {
+
+        > div {
+            @include flexRow();
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100% !important;
+
+            > * {
+                flex-basis: 48%;
+            }
+        }
+    }
+}
+
+[name="cimy_post"] + br {
+    display: none;
+}
+
+.bbp-pagination + .bbp-no-topic {
+    display: none;
+}
+
+.user-registration-error {
+    font-size: 12px;
+    color: red;
+}
+
+#check_box_1567625094_field,
+#check_box_1567625124_field {
+    display: block;
+    width: 400px;
+
+    label:not(:first-child) {
+        @include checkboxLabel();
+        display: block;
+        padding-left: .5rem;
+
+        input {
+            // visibility: hidden;
+        }
+
+        &:after {
+            left: 0;
+            right: initial;
+            display: none;
+        }
+    }
+
+    input {
+        width: auto;
+        display: inline-block;
+    }
+}

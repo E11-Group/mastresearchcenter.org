@@ -1,0 +1,279 @@
+/****************************
+Default Mixins
+****************************/
+
+// Background Cover
+@mixin bgCover {
+    background-size: cover;
+    background-position: top center;
+}
+
+// Center transform
+@mixin centerItem {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); 
+}
+
+// FlexRow
+@mixin flexRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+// FlexRow--grid
+@mixin flexRow--grid($width) {
+    @include flexRow;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    &:after {
+        content: "";
+        flex-basis: $width;
+    }
+
+    > * {
+        flex-basis: $width;
+    }
+}
+
+// Container
+@mixin container {
+  max-width: $maxWidth;
+  width: 100%;
+  padding: 0 3rem;
+  margin: 0 auto;
+
+  @media screen and ( max-width: 1280px ) {
+    padding: 0 3.5rem;
+  }
+
+  @media screen and ( max-width: 980px ) {
+    padding: 0 1rem;
+  }
+}
+
+@mixin fluidVideo {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 0.72rem;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin fluidImage {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin hideText {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+@mixin animationHacks {
+  // "hacks" for better rendering,
+  // HW acceleration, etc. from Hover CSS.
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+}
+
+// Exit Container
+@mixin exitContainer {
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  width: 100vw;
+}
+
+// Box
+@mixin box {
+  box-shadow: 0 0 10px rgba(#000, .2);
+  padding: trem(40px);
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+// Fullscreen Overlay
+@mixin fullScreenOverlay {
+  z-index: 10000;
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+
+  > div {
+    @include box;
+    padding: 0;
+    max-width: 620px;
+    width: 100%;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    left: 50%;
+    top: 50%;
+    z-index: 10001;
+    max-height: 90vh;
+    overflow-y: scroll;
+
+    @media screen and ( max-width: 630px ) {
+      max-width: 90%;
+    }
+  }
+}
+
+// Font Awesome icon replacing text
+@mixin textReplacement($icon) {
+  // Retains width/height of original word
+  display: inline-block;
+  position: relative;
+  padding: 4px 16px;
+  right: 9999px;
+
+  &:after {
+    content: $icon;
+    position: absolute;
+    top: 2px;
+    right: -9999px;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    color: #fff;
+    font-size: 50px;
+    line-height: 30.8px;
+    font-family: 'fontawesome', sans-serif;
+  }
+}
+
+@mixin button() {
+    @include fs;
+    font-size: trem(18px);
+    background: $color4;
+    border: none;
+    color: $grey--dark;
+    text-align: center;
+    padding: .5rem 2rem;
+    display: inline-block;
+    border-radius: $borderRadius;
+    box-shadow: 0 5px 10px rgba(#000, .16);
+    transition: background $sp--s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $grey--dark;
+        background: lighten($color4, 3%);
+        text-decoration: none;
+    }
+
+    &:active {
+        color: $grey--dark;
+        background: darken($color4, 3%);
+        text-decoration: none;
+    }
+
+}
+
+@mixin button--light() {
+    @include button;
+    background: $grey--light;
+    color: $color2;
+    transition: background $sp--s ease, color $sp--s ease;
+
+    &:hover,
+    &:focus {
+        background: white;
+        color: $color2;
+    }
+
+    &:active {
+        background: $grey;
+    }
+}
+
+// Tags
+@mixin tags() {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+
+    li {
+        display: inline;
+
+        &:after {
+            content: ", "
+        }
+
+        &:first-child:last-child,
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    
+    a {
+        font-size: trem(16px);
+        color: #000;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Checkbox label
+@mixin checkboxLabel() {
+    font-size: trem(14px);
+    padding-right: 25px;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        border: 2px solid $color2;
+        width: 23px;
+        height: 23px;
+        display: block;
+        border-radius: 6px;
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-size: 16px 29px;
+        background-repeat: no-repeat;
+        background-position: center -4px;
+        transition: background .5s $cb--ease;
+    }
+
+    &:hover {
+        &:after {
+            background-image: url(../../images/icon__checkmark.svg);
+            
+        }
+    }
+    
+    &.active,
+    .archive__filter__label:active,
+    .archive__filter__label:focus {
+        &:after {
+            background-color: $color2;
+            background-image: url(../../images/icon__checkmark--white.svg);
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.tribe-events-loop {
+    max-width: 100% !important;
+}
+
+#tribe-events-bar {
+    #tribe-bar-form .tribe-bar-submit input[type=submit] {
+        @include button;
+    }
+}
+
+#tribe-events .tribe-events-button, .tribe-events-button {
+    @include button;
+}
+
+
+.tribe-events-adv-list-widget .tribe-events-widget-link a, .tribe-events-back a, .tribe-events-list-widget .tribe-events-widget-link a, ul.tribe-events-sub-nav a {
+    @include button;
+}
+
+#tribe-events-footer .tribe-events-sub-nav, #tribe-events-header .tribe-events-sub-nav {
+    overflow: visible;
+}
+
+.single-tribe_events .tribe-events-cal-links,
+.tribe-events-ical  {
+    display: none !important;
+}
+
+#tribe-bar-form {
+    @media screen and ( max-width: 865px ) {
+        display: none !important;
+    }
+}
+
+.tribe-events-read-more {
+    @include button;
+}
+
+.tribe-events-event-cost {
+    display: flex;
+    align-items: center;
+    float: none;
+    margin: 0 0 15px;
+    background: green;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 16px;
+    width: auto;
+}

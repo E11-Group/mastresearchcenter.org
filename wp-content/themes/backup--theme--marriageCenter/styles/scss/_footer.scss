@@ -1,0 +1,133 @@
+.footer {
+    background: $color2;
+    color: white;
+    font-size: trem(36px);
+    padding: 1rem 0;
+    
+    ul {
+        display: flex;
+        align-items: center;
+
+        @media screen and ( max-width: 680px ) {
+            flex-wrap: wrap;
+        }
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        @include fp;
+        font-weight: bold;
+        color: white;
+    }
+}
+
+.footer__inner {
+    align-items: center;
+    justify-content: space-between;
+
+    > * {
+        @media screen and ( max-width: 680px ) {
+            flex-basis: 100%;
+            text-align: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.footer__logo {
+    
+    a {
+        font-size: trem(36px);
+        font-weight: bold;
+        display: block;
+
+        &:hover {
+            img {
+                transform: scale(1.04);
+            }
+        }
+
+        @media screen and ( max-width: 880px ) {
+            font-size: trem(20px);
+        }
+    }
+
+    img {
+        width: 400px;
+        height: auto;
+        transform: scale(1);
+        transition: transform .25s ease;
+
+        @media screen and ( max-width: 1320px ) {
+            width: 300px;
+            max-width: 100%;
+        }
+    }
+}
+
+.footer__navigation {
+
+    li {
+        @media screen and ( max-width: 680px ) {
+            flex-basis: 100%;
+        }
+    }
+
+    a {
+        padding: 0 1rem;
+        display: block;
+        font-size: trem(20px);
+
+        @media screen and ( max-width: 786px ) {
+            font-size: trem(16px);
+            padding: 0 .4rem;
+        }
+
+        @media screen and ( max-width: 680px ) {
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+.footer__social {
+
+    @media screen and ( max-width: 680px ) {
+        margin-bottom: 0 !important;
+    }
+
+    ul {
+        @media screen and ( max-width: 680px ) {
+            text-align: center;
+            justify-content: center;
+        }
+    }
+
+    a {
+        padding: 0 .5rem;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+
+        path {
+            fill: white;
+        }
+    }
+}
+
+
+.copyrightFooter {
+    background: darken($color2, 10%);
+    padding: 2rem 0;
+    font-size: trem(14px);
+    color: white;
+
+    p {
+        margin-bottom: 1rem;
+    }
+}

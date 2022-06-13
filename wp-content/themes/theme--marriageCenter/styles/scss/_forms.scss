@@ -1,0 +1,53 @@
+// Forms
+select {
+    appearance: none;
+    padding: .5rem 1rem;
+    font-size: trem(16px);
+    background-image: url("../../images/icon__triangle.svg");
+    background-size: 15px 8px;
+    background-position: calc(100% - 1rem) center;
+    background-repeat: no-repeat;
+    min-width: 382px;
+    background-color: $color4;
+    border-radius: $borderRadius;
+    border: none;
+
+    @media screen and ( max-width: 768px ) {
+        min-width: 200px;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    appearance: none;
+    padding: .5rem;
+    font-size: trem(16px);
+    border-radius: $borderRadius;
+    border: 2px solid $color2;
+}
+
+.form-control {
+    padding: .5rem;
+    font-size: trem(16px);
+    border-radius: $borderRadius;
+    border: 2px solid $color2;
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+.form-row .col label {
+    display: block;
+}
+
+fieldset {
+    small {
+        font-size: trem(14px);
+        margin-bottom: 1rem;
+        display: block;
+        margin-top: .2rem;
+    }
+}

@@ -1,0 +1,123 @@
+.threeColumnCards {
+    background: $color1--light;
+    padding: 4rem 0;
+
+    .cards__row {
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+
+        @media screen and ( max-width: 768px ) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card__inner {
+        height: 100%;
+        padding: 40px 50px;
+
+        @media screen and ( max-width: 1000px ) {
+            padding: 30px;
+        }
+
+        @media screen and ( max-width: 768px ) {
+            padding: 20px;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            display: flex;
+            align-items: stretch;
+        }
+    }
+
+    .card__imageWrap {
+        @media screen and ( max-width: 600px ) {
+            height: 100%;
+            width: 100%;
+            max-width: 65px;
+            flex-shrink: 0;
+        }
+    }
+
+    .cards {
+        background: none;
+        padding: 0;
+    }
+
+    .card__image {
+        max-width: 160px;
+        background-size: 100%;
+        background-position: center;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+
+        @media screen and ( max-width: 980px ) {
+            max-width: 100px;
+        }
+
+        @media screen and ( max-width: 850px ) {
+            max-width: 230px;
+        }
+
+        @media screen and ( max-width: 600px ) {
+            background-position: center top 1em;
+            height: 100%;
+            max-width: 160px;
+        }
+    }
+
+    .card {
+
+        @media screen and ( max-width: 850px ) {
+            flex-basis: 100%;
+            // padding: 0 8rem;
+        }
+
+        @media screen and ( max-width: 700px ) {
+            padding: 0;
+        }
+
+        &:nth-child(odd):last-child {
+            @media screen and ( max-width: 768px ) {
+                grid-column: span 2;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 50%;
+            }
+
+            @media screen and ( max-width: 600px ) {
+                grid-column: auto;
+                max-width: none;
+            }
+        }
+
+        + .card {
+            @media screen and ( max-width: 600px ) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.threeColumnCards__header {
+    @include flexRow();
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @media screen and ( max-width: 768px ) {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+.threeColumnCards__title {
+    font-size: trem(36px)
+}
+
+.threeColumnCards__cta {
+    @include button;
+}

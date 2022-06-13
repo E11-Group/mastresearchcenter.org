@@ -1,0 +1,101 @@
+body.modal--open {
+
+    .modal {
+        opacity: 1;
+        pointer-events: inherit;
+    }
+
+    .modal__inner { 
+        opacity: 1;
+    }
+}
+
+.modal {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: 10000000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(#242626, .82);
+    display: block;
+    left: 0;
+    top: 0;
+    transition: opacity .5s $cb--bounce;
+
+    .close {
+        position: absolute;
+        z-index: 10;
+        top: -1.5rem;
+        right: 0;
+        color: white;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+            text-transform: uppercase;
+            text-decoration: underline;
+            margin-right: .4rem;
+        }
+
+        i {
+            @include fp;
+            color: #fff;
+            font-size: 34px;
+            text-decoration: none;
+            line-height: .8;
+            height: 20px;
+        }
+        
+    }
+}
+
+.modal__inner {
+    opacity: 0;
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #242626;
+    border: 1px solid #000000;
+    transition: opacity .5s $cb--bounce .5s;
+
+    @media screen and ( max-width: 870px ) {
+        width: 90%;
+    }
+}
+
+.modal__content {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s $cb--bounce 1s;
+    padding: 2rem;
+    display: none;
+
+    &.active {
+        display: block;
+        pointer-events: inherit;
+        opacity: 1;
+        transition: opacity .5s $cb--bounce 1s;
+    }
+}
+
+.modal__form {
+    label {
+        font-size: 14px; 
+        text-transform: uppercase;
+        color: white;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        width: auto;
+        margin-top: 1rem;
+    }
+}

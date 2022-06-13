@@ -1,0 +1,14 @@
+.threeColumnText__row {
+    @include flexRow();
+}
+
+.threeColumnText__column {
+    padding: 1rem;
+    flex-basis: 32%;
+
+    @media screen and ( max-width: 850px ) {
+        flex-basis: 100%;
+        padding: 0 8rem;
+    }
+
+}
